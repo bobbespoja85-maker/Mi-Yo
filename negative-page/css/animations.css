@@ -1,0 +1,233 @@
+/* ============================================
+   BOBBESPOJA - NEGATIVE ANIMATIONS CSS
+   Animaciones oscuras y perturbadoras
+   ============================================ */
+
+/* ===== ENTRADA CON FADE UP ===== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== ENTRADA CON FADE LEFT ===== */
+.fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===== ENTRADA CON FADE RIGHT ===== */
+.fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===== ENTRADA CON SCALE ===== */
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== ENTRADA CON BLUR ===== */
+.blur-in {
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 1.5s ease, filter 1.5s ease;
+}
+
+.blur-in.visible {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* ===== STAGGER DELAY ===== */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.8s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 1s; opacity: 1; transform: translateY(0); }
+
+/* ===== PULSE GLOW OSCURO ===== */
+@keyframes pulse-glow-dark {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(139, 0, 0, 0.5), 0 0 60px rgba(74, 0, 128, 0.3);
+    }
+}
+
+.pulse-glow-dark {
+    animation: pulse-glow-dark 3s ease-in-out infinite;
+}
+
+/* ===== FLICKER OSCURO ===== */
+@keyframes flicker-dark {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+    52% { opacity: 1; }
+    55% { opacity: 0.2; }
+    56% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.1; }
+    94% { opacity: 1; }
+}
+
+.flicker-dark {
+    animation: flicker-dark 4s ease-in-out infinite;
+}
+
+/* ===== SHAKE SUTIL ===== */
+@keyframes shake-subtle {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.shake-subtle {
+    animation: shake-subtle 5s ease-in-out infinite;
+}
+
+/* ===== BREATHE ===== */
+@keyframes breathe {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+.breathe {
+    animation: breathe 4s ease-in-out infinite;
+}
+
+/* ===== DISTORTION WAVE ===== */
+@keyframes distortion-wave {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-1px); }
+    100% { transform: translateX(0); }
+}
+
+.distortion-wave {
+    animation: distortion-wave 6s ease-in-out infinite;
+}
+
+/* ===== GLITCH TEXT REVEAL OSCURO ===== */
+@keyframes glitch-reveal-dark {
+    0% { 
+        clip-path: inset(0 100% 0 0);
+        transform: translateX(-10px);
+        filter: blur(5px);
+    }
+    20% { 
+        clip-path: inset(0 80% 0 0);
+        transform: translateX(5px);
+        filter: blur(3px);
+    }
+    40% { 
+        clip-path: inset(0 60% 0 0);
+        transform: translateX(-3px);
+        filter: blur(2px);
+    }
+    60% { 
+        clip-path: inset(0 40% 0 0);
+        transform: translateX(2px);
+        filter: blur(1px);
+    }
+    80% { 
+        clip-path: inset(0 20% 0 0);
+        transform: translateX(-1px);
+        filter: blur(0);
+    }
+    100% { 
+        clip-path: inset(0 0 0 0);
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.glitch-reveal-dark {
+    animation: glitch-reveal-dark 1.5s ease-out forwards;
+}
+
+/* ===== STATIC NOISE ===== */
+@keyframes static-noise {
+    0%, 100% { background-position: 0 0; }
+    10% { background-position: -10px -10px; }
+    20% { background-position: 10px 10px; }
+    30% { background-position: -5px 5px; }
+    40% { background-position: 5px -5px; }
+    50% { background-position: -15px 15px; }
+    60% { background-position: 15px -15px; }
+    70% { background-position: -20px 20px; }
+    80% { background-position: 20px -20px; }
+    90% { background-position: -10px 10px; }
+}
+
+.static-noise {
+    animation: static-noise 0.5s steps(10) infinite;
+}
+
+/* ===== VORTEX SPIN ===== */
+@keyframes vortex-spin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.vortex-spin {
+    animation: vortex-spin 20s linear infinite;
+}
+
+/* ===== HEARTBEAT SLOW ===== */
+@keyframes heartbeat-slow {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    25% { transform: scale(1.05); opacity: 0.7; }
+    50% { transform: scale(1); opacity: 0.5; }
+    75% { transform: scale(1.03); opacity: 0.6; }
+}
+
+.heartbeat-slow {
+    animation: heartbeat-slow 3s ease-in-out infinite;
+}
+
+/* ===== FLOAT UNSETTLED ===== */
+@keyframes float-unsettled {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    50% { transform: translateY(5px) rotate(-1deg); }
+    75% { transform: translateY(-5px) rotate(0.5deg); }
+}
+
+.float-unsettled {
+    animation: float-unsettled 6s ease-in-out infinite;
+}
