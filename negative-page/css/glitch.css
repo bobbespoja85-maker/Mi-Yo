@@ -1,0 +1,193 @@
+/* ============================================
+   BOBBESPOJA - NEGATIVE GLITCH CSS
+   Efectos de glitch oscuros y perturbadores
+   ============================================ */
+
+/* ===== GLITCH TITLE DARK ===== */
+.glitch-title-dark {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-title-dark::before,
+.glitch-title-dark::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-title-dark::before {
+    left: 2px;
+    text-shadow: -2px 0 #8b0000;
+    clip-path: inset(0 0 0 0);
+    animation: glitch-dark-1 4s infinite linear alternate-reverse;
+}
+
+.glitch-title-dark::after {
+    left: -2px;
+    text-shadow: -2px 0 #4a0080;
+    clip-path: inset(0 0 0 0);
+    animation: glitch-dark-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-dark-1 {
+    0% { clip-path: inset(20% 0 80% 0); }
+    20% { clip-path: inset(60% 0 10% 0); }
+    40% { clip-path: inset(40% 0 50% 0); }
+    60% { clip-path: inset(80% 0 5% 0); }
+    80% { clip-path: inset(10% 0 70% 0); }
+    100% { clip-path: inset(30% 0 20% 0); }
+}
+
+@keyframes glitch-dark-2 {
+    0% { clip-path: inset(10% 0 60% 0); }
+    20% { clip-path: inset(30% 0 20% 0); }
+    40% { clip-path: inset(70% 0 10% 0); }
+    60% { clip-path: inset(20% 0 50% 0); }
+    80% { clip-path: inset(50% 0 30% 0); }
+    100% { clip-path: inset(5% 0 80% 0); }
+}
+
+/* ===== GLITCH TEXT DARK ===== */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-text::before {
+    color: #8b0000;
+    animation: glitch-text-dark-1 5s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px, -2px);
+}
+
+.glitch-text::after {
+    color: #4a0080;
+    animation: glitch-text-dark-2 4s infinite;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: translate(2px, 2px);
+}
+
+@keyframes glitch-text-dark-1 {
+    0%, 90%, 100% { transform: translate(0); }
+    92% { transform: translate(-5px, 2px); }
+    94% { transform: translate(5px, -2px); }
+    96% { transform: translate(-3px, 0); }
+    98% { transform: translate(3px, 0); }
+}
+
+@keyframes glitch-text-dark-2 {
+    0%, 85%, 100% { transform: translate(0); }
+    87% { transform: translate(5px, -2px); }
+    89% { transform: translate(-5px, 2px); }
+    91% { transform: translate(3px, 0); }
+    93% { transform: translate(-3px, 0); }
+}
+
+/* ===== GLITCH SCAN DARK ===== */
+.glitch-scan-dark {
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch-scan-dark::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #8b0000;
+    box-shadow: 0 0 20px #8b0000;
+    animation: scan-glitch-dark 3s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes scan-glitch-dark {
+    0% { top: -3px; }
+    100% { top: 100%; }
+}
+
+/* ===== GLITCH COLOR SHIFT DARK ===== */
+@keyframes color-shift-dark {
+    0%, 100% { filter: hue-rotate(0deg) saturate(1); }
+    25% { filter: hue-rotate(30deg) saturate(1.5); }
+    50% { filter: hue-rotate(-30deg) saturate(0.8); }
+    75% { filter: hue-rotate(15deg) saturate(1.2); }
+}
+
+.glitch-color-shift-dark {
+    animation: color-shift-dark 5s ease-in-out infinite;
+}
+
+/* ===== GLITCH SCALE DARK ===== */
+@keyframes glitch-scale-dark {
+    0%, 100% { transform: scale(1); }
+    90% { transform: scale(1); }
+    92% { transform: scale(1.05); }
+    94% { transform: scale(0.95); }
+    96% { transform: scale(1.02); }
+    98% { transform: scale(0.98); }
+}
+
+.glitch-scale-dark {
+    animation: glitch-scale-dark 4s ease-in-out infinite;
+}
+
+/* ===== NOISE OVERLAY DARK ===== */
+.noise-overlay-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9996;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ===== GLITCH BORDER DARK ===== */
+.glitch-border-dark {
+    position: relative;
+}
+
+.glitch-border-dark::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg,
+        #8b0000,
+        #4a0080,
+        #1a0033,
+        #ff0040
+    );
+    z-index: -1;
+    animation: glitch-border-dark 4s linear infinite;
+    background-size: 400%;
+    opacity: 0.5;
+}
+
+@keyframes glitch-border-dark {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
