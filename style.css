@@ -1,1 +1,97 @@
+/* ESTILOS GENERALES - FONDO OSCURO Y MELANCÓLICO */
+body {
+    background-color: #0a0a0a;
+    color: #c4c4c4;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
 
+/* EFECTO GLITCH PARA EL TÍTULO (Honor al Breakcore) */
+h1.glitch {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    color: #e0e0e0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; /* Colores cyberpunk/glitch */
+}
+
+.subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* ESTRUCTURA DEL TEXTO */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+article {
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #333; /* Línea separadora melancólica */
+}
+
+article:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #a0a0a0;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    text-align: justify;
+    color: #dcdcdc;
+}
+
+/* ENLACES (Como el de Instagram de tu pareja) */
+a.social-link {
+    color: #ff00ff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px dotted #ff00ff;
+    transition: all 0.3s ease;
+}
+
+a.social-link:hover {
+    color: #00ffff;
+    border-bottom: 1px solid #00ffff;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #333;
+    color: #555;
+    font-size: 0.9rem;
+    background-color: #050505;
+}
+
+/* RESPONSIVE (Para que se vea bien en celular) */
+@media (max-width: 600px) {
+    h1.glitch {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    main {
+        padding: 10px;
+    }
+}
